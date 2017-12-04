@@ -316,14 +316,9 @@ public class RNFetchBlobReq extends BroadcastReceiver implements Runnable {
                                     originalResponse.body(), options.increment);
                             break;
                         case FileStorage:
-                            // URI uri = Uri.parse(this.url);
-                            Log.d("RNFB", "CL: " + originalResponse.header("Content-Length"));
-
                             String extension = url.substring(url.lastIndexOf(".") + 1, url.lastIndexOf("?"))
                                     .toLowerCase();
-                            Log.d("RNFB", extension);
                             boolean useEncryption = extension.equals("m4a") || extension.equals("mp4") ? true : false;
-                            // boolean useEncryption = false;//extension.equals("m4a") || extension.equals("mp4") ? true : false;
 
                             extended = new RNFetchBlobFileResp(RNFetchBlob.RCTContext, taskId, originalResponse.body(),
                                     destPath, options.overwrite, useEncryption);
@@ -446,7 +441,6 @@ public class RNFetchBlobReq extends BroadcastReceiver implements Runnable {
                     int read;
                     byte[] buffer = new byte[10240];
                     while ((read = ins.read(buffer)) != -1) {
-                        Log.d("RNFB", "isBlobResp os.write()");
                         os.write(buffer, 0, read);
                     }
                     ins.close();

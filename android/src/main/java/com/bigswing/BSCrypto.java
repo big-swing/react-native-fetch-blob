@@ -63,7 +63,7 @@ public class BSCrypto {
     private static class ApplicationSaltSource implements SaltSource {
         @Override
         public byte[] getSalt() {
-            Log.d(TAG, "app salt: " + Arrays.toString(RNFetchBlob.appSalt));
+            // Log.d(TAG, "app salt: " + Arrays.toString(RNFetchBlob.appSalt));
             return RNFetchBlob.appSalt;
         }
     }

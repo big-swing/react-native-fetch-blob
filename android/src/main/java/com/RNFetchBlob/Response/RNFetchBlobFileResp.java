@@ -56,7 +56,7 @@ public class RNFetchBlobFileResp extends ResponseBody {
         this.mPath = path;
 
         this.useEncryption = doEncryption;
-        Log.i(TAG, doEncryption ? "encrypting this file" : "NOT encrypting this file");
+        // Log.i(TAG, doEncryption ? "encrypting this file" : "NOT encrypting this file");
 
         if (path != null) {
             boolean appendToExistingFile = !overwrite;
@@ -80,11 +80,11 @@ public class RNFetchBlobFileResp extends ResponseBody {
                 try {
                     String[] tokens = path.split("/");
                     String filename = tokens[tokens.length - 1];
-                    Log.d(TAG, "filename: " + filename);
+                    // Log.d(TAG, "filename: " + filename);
                     byte[] key = crypto.generateKey(filename);
                     encryptor = crypto.createEncryptor(ofStream, key);
                 } catch (Exception ex) {
-                    Log.e(TAG, "exception creating encryptor", ex);
+                    // Log.e(TAG, "exception creating encryptor", ex);
                 }
             }
         }

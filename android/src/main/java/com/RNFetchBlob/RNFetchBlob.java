@@ -95,9 +95,9 @@ public class RNFetchBlob extends ReactContextBaseJavaModule {
     // Added by Rick Terrill 11-2017
     @ReactMethod
     public void setSalt(String salt) {
-        Log.d(TAG, "setting app salt: " + salt);
+        // Log.d(TAG, "setting app salt: " + salt);
         RNFetchBlob.appSalt = Arrays.copyOfRange(salt.getBytes(), 0, 8);
-        Log.d(TAG, "setting app salt: " + Arrays.toString(RNFetchBlob.appSalt));
+        // Log.d(TAG, "setting app salt: " + Arrays.toString(RNFetchBlob.appSalt));
     }
 
     @ReactMethod

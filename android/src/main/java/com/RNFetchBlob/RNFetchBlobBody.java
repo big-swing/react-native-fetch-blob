@@ -285,11 +285,9 @@ public class RNFetchBlobBody extends RequestBody {
      */
     private void pipeStreamToFileStream(InputStream is, FileOutputStream os) throws IOException {
 
-        Log.d("RNFB", "RNFetchBlobBody.pipeStreamToFileStream()");
         byte[] buf = new byte[10240];
         int len;
         while ((len = is.read(buf)) > 0) {
-            Log.d("RNFB", "  os.write()");
             os.write(buf, 0, len);
         }
         is.close();
